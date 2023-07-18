@@ -30,7 +30,13 @@ local plugins = {
         "rust-analyzer",
       }
     }
-  }
+  },
+  {
+    "HallerPatrick/py_lsp.nvim",
+    config = function ()
+    end
+  },
+  
 
 }
 return plugins
