@@ -7,6 +7,11 @@ local plugins = {
     end
   },
   {
+    "OmniSharp/omnisharp-vim",
+    config = function ()
+    end
+  },
+  {
     "neovim/nvim-lspconfig",
     config = function()
       require "plugins.configs.lspconfig"
@@ -35,8 +40,6 @@ local plugins = {
     "HallerPatrick/py_lsp.nvim",
     config = function ()
     end
-  },
-  
-
+  }
 }
 return plugins
