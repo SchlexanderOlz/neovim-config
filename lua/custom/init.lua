@@ -4,6 +4,20 @@ require("core.utils").load_mappings()
 
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
+vim.api.nvim_command("set number")
+vim.api.nvim_command("set relativenumber")
+
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+vim.opt.termguicolors = true
+
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
+
+vim.opt.updatetime = 50
+
 -- bootstrap lazy.nvim!
 if not vim.loop.fs_stat(lazypath) then
   require("core.bootstrap").gen_chadrc_template()
@@ -52,9 +66,14 @@ vim.g.ale_fixers = {
 }
 
 
-api.nvim_set_keymap('n', '<silent> K', ':call LanguageClient#textDocument_hover()<CR>', {noremap = true})
-api.nvim_set_keymap('n', '<silent> gd', ':call LanguageClient#textDocument_definition()<CR>', {noremap = true})
-api.nvim_set_keymap('n', '<silent> <F2>', ':call LanguageClient#textDocument_rename()<CR>', {noremap = true})
+vim.cmd([[
+  autocmd BufWritePre *.go lua vim.lsp.buf.format()
+  autocmd BufWritePre *.go lua goimports(1000)
+]])
+
+api.nvim_set_keymap('n', '<leader> k', ':call LanguageClient#textDocument_hover()<CR>', {noremap = true})
+api.nvim_set_keymap('n', '<leader> gd', ':call LanguageClient#textDocument_definition()<CR>', {noremap = true})
+api.nvim_set_keymap('n', '<leader> <F2>', ':call LanguageClient#textDocument_rename()<CR>', {noremap = true})
 
 local rt = require("rust-tools")
 
@@ -79,5 +98,4 @@ require'py_lsp'.setup {
   host_python = "/usr/bin/python3",
   default_venv_name = ".venv" -- For local venv
 }
-
 
