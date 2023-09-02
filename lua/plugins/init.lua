@@ -5,8 +5,6 @@ local default_plugins = {
   "nvim-lua/plenary.nvim",
 
   -- nvchad plugins
-  { "NvChad/extensions", branch = "v2.0" },
-
   {
     "NvChad/base46",
     branch = "v2.0",

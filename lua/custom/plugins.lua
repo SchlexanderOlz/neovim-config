@@ -40,6 +40,11 @@ local plugins = {
     "HallerPatrick/py_lsp.nvim",
     config = function ()
     end
-  }
+  },
+  {
+    "zigtools/zls",
+    config = function()
+    end
+  },
 }
 return plugins

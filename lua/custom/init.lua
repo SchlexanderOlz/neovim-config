@@ -43,8 +43,6 @@ vim.g.ocamlformat_options = '--enable-outside-detected-project'
 vim.g.LanguageClient_serverCommands = {
     ocaml = {"ocamllsp"},
 }
-cmd('call plug#begin("~/.vim/plugged")')
-cmd('call plug#end()')
 
 vim.g.ale_sign_error = '✘'
 vim.g.ale_sign_warning = '⚠'

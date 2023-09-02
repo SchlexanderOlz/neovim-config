@@ -126,3 +126,4 @@ lspconfig.gopls.setup{
 
 
 lspconfig.tsserver.setup{}
+lspconfig.zls.setup{}

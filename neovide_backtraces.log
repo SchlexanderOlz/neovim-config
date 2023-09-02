@@ -16,3 +16,47 @@
   14: <unknown>
   15: <unknown>
 
+2023-09-01 09:44:34 - Neovide panicked with the message 'Library libxkbcommon-x11.so could not be loaded.'. (File: /home/schlexander/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xkbcommon-dl-0.4.1/src/x11.rs; Line: 59, Column: 28)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: __libc_start_main
+  19: <unknown>
+
+2023-09-01 09:45:11 - Neovide panicked with the message 'Library libxkbcommon-x11.so could not be loaded.'. (File: /home/schlexander/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xkbcommon-dl-0.4.1/src/x11.rs; Line: 59, Column: 28)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: __libc_start_main
+  19: <unknown>
+
