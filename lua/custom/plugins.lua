@@ -46,5 +46,11 @@ local plugins = {
     config = function()
     end
   },
+  {
+    "jose-elias-alvarez/nvim-lsp-ts-utils",
+    config = function()
+    end
+  },
 }
+
 return plugins

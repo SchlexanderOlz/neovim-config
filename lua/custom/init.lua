@@ -32,7 +32,7 @@ local api = vim.api
 local cmd = vim.cmd
 local fn = vim.fn
 
-vim.api.nvim_command("set guifont=JetBrainsMono\\ Nerd\\ Font\\ Mono:h15")
+vim.api.nvim_command("set guifont=JetBrainsMono\\ Nerd\\ Font\\ Mono:h16")
 
 vim.g.opamshare = fn.substitute(fn.system('opam var share'), '\n$', '', '')
 cmd("set rtp+=" .. vim.g.opamshare .. "/merlin/vim")
@@ -93,7 +93,7 @@ vim.cmd([[
 
 require'py_lsp'.setup {
   -- This is optional, but allows to create virtual envs from nvim
-  host_python = "/usr/bin/python3",
+  host_python = "/usr/bin/python",
   default_venv_name = ".venv" -- For local venv
 }
 

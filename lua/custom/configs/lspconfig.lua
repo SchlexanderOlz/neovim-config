@@ -46,18 +46,6 @@ if client.resolved_capabilities.document_highlight then
 end
 end
 
-lspconfig.omnisharp.setup({
-  cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
-  on_attach = on_attach
-})
-
-lspconfig.rust_analyzer.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = {"rust"},
-  root_dir = lspconfig.util.root_pattern("Cargo.toml"),
-})
-
 lspconfig.ocamllsp.setup({
   cmd = {"ocamllsp"}, -- Specify the command to launch the ocamllsp executable
   on_attach = on_attach, -- Define your custom on_attach function
@@ -75,7 +63,17 @@ lspconfig.ocamllsp.setup({
   },
 })
 
+lspconfig.omnisharp.setup({
+  cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
+  on_attach = on_attach
+})
 
+lspconfig.rust_analyzer.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"rust"},
+  root_dir = lspconfig.util.root_pattern("Cargo.toml"),
+})
 
 lspconfig.gopls.setup{
 	cmd = {'gopls'},
@@ -125,5 +123,16 @@ lspconfig.gopls.setup{
   end
 
 
-lspconfig.tsserver.setup{}
+lspconfig.tsserver.setup({
+  init_options = require("nvim-lsp-ts-utils").init_options,
+
+  on_attach = function(client, bufnr)
+    local ts_utils = require("nvim-lsp-ts-utils")
+    ts_utils.setup_client(client)
+
+    local opts = { silent = true }
+  end,
+})
+
 lspconfig.zls.setup{}
+lspconfig.texlab.setup{}

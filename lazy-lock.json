@@ -16,6 +16,7 @@
   "nvim-autopairs": { "branch": "master", "commit": "ae5b41ce880a6d850055e262d6dfebd362bb276e" },
   "nvim-cmp": { "branch": "main", "commit": "c4e491a87eeacf0408902c32f031d802c7eafce8" },
   "nvim-colorizer.lua": { "branch": "master", "commit": "dde3084106a70b9a79d48f426f6d6fec6fd203f7" },
+  "nvim-lsp-ts-utils": { "branch": "main", "commit": "0a6a16ef292c9b61eac6dad00d52666c7f84b0e7" },
   "nvim-lspconfig": { "branch": "master", "commit": "4b26897a80c41eb2f116b271cbdcd4686fb52dd6" },
   "nvim-tree.lua": { "branch": "master", "commit": "3b62c6bf2c3f2973036aed609d02fd0ca9c3af35" },
   "nvim-treesitter": { "branch": "master", "commit": "51ea343f705a89326cff8dd7a0542d7fe0e6699a" },
@@ -28,6 +29,7 @@
   "telescope.nvim": { "branch": "master", "commit": "2ea8dcd17b4f9b7714354965a28ae4fef4139c71" },
   "ui": { "branch": "v2.0", "commit": "5545a7ef32cec4147c75156e59afd293305f639d" },
   "vim-crystal": { "branch": "master", "commit": "dc21188ec8c2ee77bb81dffca02e1a29d87cfd9f" },
+  "vimtex": { "branch": "master", "commit": "d7221267f5642e5904a45a8e661f751dff26c1a9" },
   "which-key.nvim": { "branch": "main", "commit": "38b990f6eabf62014018b4aae70a97d7a6c2eb88" },
   "zls": { "branch": "master", "commit": "f9a1f6fa439af82f60c93e9cfb46c4659a6d88b9" }
 }
