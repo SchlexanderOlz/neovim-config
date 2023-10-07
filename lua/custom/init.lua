@@ -34,16 +34,7 @@ local fn = vim.fn
 
 vim.api.nvim_command("set guifont=JetBrainsMono\\ Nerd\\ Font\\ Mono:h16")
 
-vim.g.opamshare = fn.substitute(fn.system('opam var share'), '\n$', '', '')
-cmd("set rtp+=" .. vim.g.opamshare .. "/merlin/vim")
-
 -- Configure nvim-ocamlformat
-vim.g.ocamlformat_options = '--enable-outside-detected-project'
-
-vim.g.LanguageClient_serverCommands = {
-    ocaml = {"ocamllsp"},
-}
-
 vim.g.ale_sign_error = '✘'
 vim.g.ale_sign_warning = '⚠'
 cmd("highlight ALEErrorSign ctermbg=NONE ctermfg=red")
@@ -54,19 +45,10 @@ vim.g.ale_lint_on_enter = 0
 vim.g.ale_lint_on_save = 1
 vim.g.ale_fix_on_save = 1
 
-vim.g.ale_linters = {
-    ocaml = {'ocamlformat'},
-}
-
-vim.g.ale_fixers = {
-    ocaml = {'ocamlformat'},
-    ['*'] = {'remove_trailing_lines', 'trim_whitespace'},
-}
-
-
 vim.cmd([[
   autocmd BufWritePre *.go lua vim.lsp.buf.format()
   autocmd BufWritePre *.go lua goimports(1000)
+  autocmd BufWritePre *.ml lua vim.lsp.buf.format()
 ]])
 
 api.nvim_set_keymap('n', '<leader> k', ':call LanguageClient#textDocument_hover()<CR>', {noremap = true})

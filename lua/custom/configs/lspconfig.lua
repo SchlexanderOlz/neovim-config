@@ -12,6 +12,9 @@ else
   omnisharp_bin = 'C:\\Users\\scholz3\\lsps\\omnisharp-win-x64-net6.0\\OmniSharp.exe'
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 local on_attach = function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -58,10 +61,24 @@ lspconfig.ocamllsp.setup({
         diagnostics = true, -- Enable diagnostics (errors and warnings)
         debounce = 100, -- Set a debounce time for diagnostics (in milliseconds)
       },
-      -- Add any other ocamllsp-specific settings here, if applicable
     },
   },
 })
+
+vim.g.ocamlformat_options = '--enable-outside-detected-project'
+
+vim.g.LanguageClient_serverCommands = {
+    ocaml = {"ocamllsp"},
+}
+
+vim.g.ale_linters = {
+    ocaml = {'ocamlformat'},
+}
+
+vim.g.ale_fixers = {
+    ocaml = {'ocamlformat'},
+    ['*'] = {'remove_trailing_lines', 'trim_whitespace'},
+}
 
 lspconfig.omnisharp.setup({
   cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
@@ -136,3 +153,8 @@ lspconfig.tsserver.setup({
 
 lspconfig.zls.setup{}
 lspconfig.texlab.setup{}
+
+local ccls_config = {
+  filetypes = { 'c', 'cpp', 'ino' }, -- Add 'ino' here
+}
+lspconfig.ccls.setup(ccls_config)
