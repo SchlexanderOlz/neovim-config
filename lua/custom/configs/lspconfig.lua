@@ -158,3 +158,7 @@ local ccls_config = {
   filetypes = { 'c', 'cpp', 'ino' }, -- Add 'ino' here
 }
 lspconfig.ccls.setup(ccls_config)
+lspconfig.asm_lsp.setup{
+  command = "asm-lsp",
+  filetypes = { "asm", "s", "S" }
+}

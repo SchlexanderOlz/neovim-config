@@ -4,6 +4,8 @@ require("core.utils").load_mappings()
 
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
+vim.cmd('source ~/.config/nvim/syntax/asm.vim')
+
 vim.api.nvim_command("set number")
 vim.api.nvim_command("set relativenumber")
 
