@@ -4,6 +4,7 @@ require("core.utils").load_mappings()
 
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
+-- asm.vim file is at https://github.com/Shirk/vim-gas/tree/master
 vim.cmd('source ~/.config/nvim/syntax/asm.vim')
 
 vim.api.nvim_command("set number")
